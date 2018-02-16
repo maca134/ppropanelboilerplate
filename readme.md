@@ -1,4 +1,4 @@
-# Typescript CEP Panel for Premier Pro Boilplate
+# Typescript CEP Panel for Premier Pro Boilerplate
 
 Working but not complete, allows debugging/breakpointing the dom side with VSCode. Will work with other adobe stuff with minor tweaks.
 
