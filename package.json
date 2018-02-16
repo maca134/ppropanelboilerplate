@@ -1,0 +1,35 @@
+{
+  "name": "ppropanelboilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build.js",
+  "scripts": {
+    "build": "gulp build"
+  },
+  "author": {
+    "name": "Matthew McConnell",
+    "email": "maca134@googlemail.com",
+    "url": "https://github.com/maca134/ppropanelboilerplate"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "bootstrap": "^4.0.0",
+    "browserify": "^16.1.0",
+    "fs-jetpack": "^1.3.0",
+    "glup": "^1.0.14",
+    "gulp-sass": "^3.1.0",
+    "tsify": "^3.0.4",
+    "typescript": "^2.7.1",
+    "xml2js": "^0.4.19"
+  },
+  "cep": {
+    "packagename": "com.maca134.PProPanelBoilerplate",
+    "name": "PProPanel Boilerplate",
+    "debug": false,
+    "extensionsPath": "C:\\Program Files (x86)\\Common Files\\Adobe\\CEP\\extensions",
+    "window": {
+      "width": 180,
+      "height": 300
+    }
+  }
+}

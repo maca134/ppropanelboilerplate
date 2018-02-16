@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "lib": [
+            "es5"
+        ],
+        "strict": true,
+        "target": "es3",
+        "sourceMap": true
+    },
+    "types": [
+        "./typings/**/*.d.ts"
+    ]
+}
