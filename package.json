@@ -19,13 +19,14 @@
     "glup": "^1.0.14",
     "gulp-sass": "^3.1.0",
     "tsify": "^3.0.4",
+    "tslib": "^1.9.0",
     "typescript": "^2.7.1",
     "xml2js": "^0.4.19"
   },
   "cep": {
     "packagename": "com.maca134.PProPanelBoilerplate",
     "name": "PProPanel Boilerplate",
-    "debug": false,
+    "debug": true,
     "extensionsPath": "C:\\Program Files (x86)\\Common Files\\Adobe\\CEP\\extensions",
     "window": {
       "width": 180,

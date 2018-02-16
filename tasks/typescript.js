@@ -7,24 +7,28 @@ const package = jetpack.read(fp.join(__dirname, '../package.json'), 'json');
 module.exports = function (paths) {
     return function typescriptTask() {
         return Promise.all([
-            {
-                src: paths.srcDir.path('./ts/dom/main.ts'),
-                dst: paths.destDir.path('main.js')
-            },
-            {
-                src: paths.srcDir.path('./ts/cep/panel.ts'),
-                dst: paths.destDir.path('panel.jsx')
-            },
-        ].map(script => {
-            return new Promise((resolve, reject) => {
+            new Promise((resolve, reject) => {
+                const src = paths.srcDir.path('./ts/dom/main.ts');
+                const dst = paths.destDir.path('main.js');
                 browserify({
                     debug: package.cep.debug
                 })
-                    .add(script.src)
-                    .plugin(tsify, {project: fp.join(fp.dirname(script.src), 'tsconfig.json')})
+                    .add(src)
+                    .plugin(tsify, {project: fp.join(fp.dirname(src), 'tsconfig.json')})
                     .bundle()
-                    .pipe(jetpack.createWriteStream(script.dst).on('finish', () => resolve()));
-            });
-        }));
+                    .pipe(jetpack.createWriteStream(dst).on('finish', () => resolve()));
+            }),
+            new Promise((resolve, reject) => {
+                const src = paths.srcDir.path('./ts/cep/panel.ts');
+                const dst = paths.destDir.path('panel.jsx');
+                browserify({
+                    debug: package.cep.debug
+                })
+                    .add(src)
+                    .plugin(tsify, {project: fp.join(fp.dirname(src), 'tsconfig.json')})
+                    .bundle()
+                    .pipe(jetpack.createWriteStream(dst).on('finish', () => resolve()));
+            }),
+        ]);
     };
 };

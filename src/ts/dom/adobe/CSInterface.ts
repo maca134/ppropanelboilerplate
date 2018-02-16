@@ -5,14 +5,12 @@ export default class CSInterface {
     public hostEnvironment: HostEnvironment = JSON.parse(window.__adobe_cep__.getHostEnvironment());
 
     private constructor() {
-        console.log(this.hostEnvironment.appSkinInfo.appBarBackgroundColor.color.blue);
+        
     }
-    
-    public evalScript(script: string): Promise<string> {
+        
+    public evalScript<T>(script: string): Promise<T> {
         return new Promise((resolve, reject) => {
-            window.__adobe_cep__.evalScript(script, function (result) {
-                console.log(arguments, arguments.callee, result == 'EvalScript error.');
-            });
+            window.__adobe_cep__.evalScript(script, s => resolve(JSON.parse(s)));
         });
     }
 }

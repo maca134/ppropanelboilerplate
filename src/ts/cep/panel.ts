@@ -1,6 +1,6 @@
-export {}; // ts complains if a declare is present without import/export...
+import CEPBridge from './lib/CEPBridge';
+import App from './App';
 
 declare var $: any;
-
-if ($ == undefined)
-    $ = {};
+if($ === undefined) $={};
+$._bridge = new CEPBridge<App>(App);

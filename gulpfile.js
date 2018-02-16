@@ -6,7 +6,7 @@ const package = jetpack.read('./package.json', 'json');
 const paths = {
 	srcDir: jetpack.cwd('./src'),
 	destDir: jetpack.cwd(`./build`),
-	runDir: jetpack.cwd(fp.join(package.cep.extensionsPath, package.name)),
+	runDir: jetpack.cwd(fp.join(package.cep.extensionsPath, package.cep.packagename)),
 };
 
 const cleanTask = require('./tasks/clean')(paths);
